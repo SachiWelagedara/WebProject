@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="pages.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('background3.jpg');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.6); 
+            padding: 30px;
+            border-radius: 10px; 
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .form-title {
+            font-size: 2rem; 
+            margin-bottom: 1rem; 
+            color: #333; 
+        }
+
+        label {
+            display: block; 
+            margin-bottom: 0.5rem; 
+            font-weight: bold; 
+            color: #333; 
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%; 
+            padding: 0.75rem; 
+            margin-bottom: 1rem; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+            font-size: 1rem; 
+            transition: border-color 0.3s; 
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            border-color: #007bff; 
+            outline: none; 
+        }
+
+        .btn {
+            background-color: rgba(0, 123, 255, 0.7); 
+            color: #fff; 
+            padding: 0.75rem; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease; 
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: rgba(0, 86, 179, 0.7); 
+            transform: translateY(-2px);
+        }
+
+        .links {
+            margin-top: 1.5rem;
+        }
+
+        .links p {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .form-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="signup">
+        <h1 class="form-title">Add flight</h1>
+        <form action="add.php" method="POST">
+            <label for="id">Flght ID</label>
+            <input type="text" name="id" id="id" placeholder="Enter ID" required><br>
+
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" required><br>
+            
+            <label for="brand">Airline</label>
+            <input type="text" name="brand" id="brand" placeholder="Vehicle brand" required><br>
+
+            <label for="type">Flight Type</label>
+            <select name="type" id="type" required>
+                <option value="">Select a type</option>
+                <option value="commercial">Commercial</option>
+                <option value="Private">Private</option>
+                <option value="Genaral">General</option>
+                <option value="Cargo">Cargo</option>
+            </select><br>
+
+            <label for="availability">Available?</label>
+            <input type="checkbox" name="availability" id="availability" value="Yes"> Yes<br>
+
+            <input type="submit" value="Signup" class="btn" name="signup"><br>
+        </form>
+      
+    </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Vehicle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdfdfd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('background2.jpg');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.85); 
+            padding: 30px;
+            border-radius: 10px; 
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            max-width: 100%;
+            text-align: center;
+            border: 2px solid #28a745;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #28a745;
+            font-size: 2rem; 
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            text-align: left; 
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease; 
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus {
+            border-color: #28a745; 
+            outline: none; 
+        }
+
+        input[type="checkbox"] {
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.2s ease; 
+        }
+
+        button:hover {
+            background-color: #218838;
+            transform: translateY(-2px); 
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 1.6rem; 
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Update Information</h1>
+        
+        <form action="update.php" method="POST">
+            <label for="id">ID:</label>
+            <input type="text" name="id" id="id" required>
+            
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required>
+            
+            <label for="brand">Airline</label>
+            <input type="text" name="brand" id="brand" required>
+            
+            <label for="type">Flight Type</label>
+            <select name="type" id="type" required>
+                <option value="">Select a type</option>
+                <option value="Commercial">Commercial</option>
+                <option value="Private">Private</option>
+                <option value="Genaral">General</option>
+                <option value="Cargo">Cargo</option>
+            </select><br>
+            
+            <label for="availability">Availability:</label>
+            <label for="availability"><input type="checkbox" name="availability" id="availability" value="Yes"> Available</label>
+
+            <button type="submit" name="update">Update</button>
+        </form>
+    </div>
+
+</body>
+</html>
